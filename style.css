@@ -1,11 +1,162 @@
+/* =========================
+   TÍTULO Y SUBTÍTULO
+========================= */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #1B5E5A;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #4f8f8a;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* =========================
+   BODY Y CONTENEDOR DE MALLA
+========================= */
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: #f4fbfa;
   padding: 20px;
 }
 
 #malla {
   display: flex;
-  gap: 40px;
+  gap: 30px;
   overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
 }
+
+/* =========================
+   AÑOS (TARJETAS GRANDES)
+========================= */
+.año {
+  background-color: #E0F2F1;
+  min-width: 300px;
+  padding: 20px;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 6px 14px rgba(38,166,154,0.18);
+  flex-shrink: 0;
+  border: 2px solid #B2DFDB;
+}
+
+.año > h2 {
+  margin: 0 0 15px 0;
+  color: #26A69A;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* =========================
+   SEMESTRES (TARJETAS INTERNAS)
+========================= */
+.semestres {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.semestre {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(38,166,154,0.15);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #E0F2F1;
+}
+
+.semestre h3 {
+  text-align: center;
+  color: #26A69A;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   RAMOS
+========================= */
+.ramo {
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 90%;
+}
+
+/* Hover */
+.ramo:hover {
+  transform: scale(1.04);
+}
+
+/* Disponible */
+.ramo.disponible {
+  background-color: #E0F2F1;
+  color: #1B5E5A;
+}
+
+/* Aprobado */
+.ramo.aprobado {
+  background-color: #80CBC4;
+  color: #004D40;
+  text-decoration: line-through;
+  font-weight: bold;
+}
+
+/* Bloqueado */
+.ramo.bloqueado {
+  background-color: #F1F8F7;
+  color: #9bbdbc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Hover solo disponible */
+.ramo.disponible:hover {
+  background-color: #B2DFDB;
+}
+
+/* =========================
+   ANIMACIÓN PULSE
+========================= */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.ramo.pulse {
+  animation: pulse 0.4s ease;
+}
+
+/* =========================
+   WATERMARK
+========================= */
+.watermark {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  font-size: 12px;
+  color: rgba(38,166,154,0.5);
+  font-style: italic;
+  pointer-events: none;
+}
+
+/* ESTADO ESTABLE – TODO SE VE BIEN 💚 */
